@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCP Forge — Operator Audio Guide · Benni-os</title>
+  <meta name="description" content="5-part operator audio guide for the MCP Forge Playbook. Benni-os voice. 62 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080810; --surface: #0f0f1a; --surface2: #16162a;
+      --border: #1e1e3a; --border2: #2a2a4a;
+      --accent: #7c5cfc; --accent2: #4f8ef7; --accent3: #00e5a0;
+      --text: #f0f0ff; --text2: #9090b0; --text3: #5a5a7a;
+      --mono: 'JetBrains Mono', monospace; --sans: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent3); box-shadow: 0 0 8px var(--accent3); animation: pulse 2s infinite; }
+    .nav-brand span { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-tag { font-size: 11px; font-weight: 600; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 4px; padding: 3px 10px; letter-spacing: 0.06em; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .product-hero { padding: 7rem 2rem 3rem; text-align: center; max-width: 760px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(124,92,252,0.08); border: 1px solid rgba(124,92,252,0.2); border-radius: 100px; padding: 5px 14px; margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    h1 .accent { color: var(--accent); } h1 .accent3 { color: var(--accent3); }
+    .hero-sub { font-size: 1.05rem; color: var(--text2); max-width: 560px; margin: 0 auto 2rem; }
+    .runtime-badge { display: inline-flex; gap: 1.5rem; background: var(--surface); border: 1px solid var(--border2); border-radius: 10px; padding: 0.75rem 1.5rem; margin-bottom: 3rem; }
+    .runtime-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .runtime-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent3); }
+    .runtime-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); }
+    .episodes { max-width: 760px; margin: 0 auto; padding: 0 2rem 5rem; display: flex; flex-direction: column; gap: 0; }
+    .episode { border: 1px solid var(--border2); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background: var(--surface); transition: border-color 0.2s; }
+    .episode:hover { border-color: var(--accent); }
+    .ep-header { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem 1.75rem 1.25rem; }
+    .ep-num { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 6px; padding: 4px 10px; flex-shrink: 0; margin-top: 2px; }
+    .ep-info { flex: 1; }
+    .ep-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .ep-chapters { font-size: 12px; color: var(--accent2); font-family: var(--mono); margin-bottom: 0.5rem; }
+    .ep-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin: 0; }
+    .ep-dur { font-family: var(--mono); font-size: 12px; color: var(--text3); flex-shrink: 0; padding-top: 2px; }
+    .ep-player { padding: 0 1.75rem 1.5rem; }
+    audio { width: 100%; height: 44px; border-radius: 8px; accent-color: var(--accent); }
+    .ep-topics { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 1.75rem 1.5rem; }
+    .ep-topic { font-size: 11px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; font-family: var(--mono); }
+    .doctrine { max-width: 760px; margin: 0 auto; padding: 0 2rem 5rem; }
+    .quote-block { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; background: var(--surface); border-radius: 0 10px 10px 0; }
+    .quote-block p { font-size: 1.1rem; font-style: italic; color: var(--text); margin: 0; }
+    .quote-block .author { font-size: 12px; color: var(--accent); margin-top: 0.75rem; font-style: normal; font-weight: 600; }
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 11px; color: var(--text3); }
+    @media (max-width: 600px) { .product-hero { padding: 6rem 1.25rem 2rem; } .episodes { padding: 0 1.25rem 3rem; } .ep-header { padding: 1.25rem; } .ep-player, .ep-topics { padding-left: 1.25rem; padding-right: 1.25rem; } nav { padding: 0 1.25rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="https://benni-os.net" target="_blank">
+    <div class="dot"></div>
+    <span>Benni-os</span>
+  </a>
+  <span class="nav-tag">🔒 Operator Access</span>
+</nav>
+
+<div class="product-hero">
+  <div class="hero-badge">🎙 Operator Audio Guide · Unlocked</div>
+  <h1>MCP Forge <span class="accent">Operator</span><br/>Audio <span class="accent3">Guide</span></h1>
+  <p class="hero-sub">Five deep-dive episodes narrated in the Benni-os operator voice. Built with NotebookLM. Listen chapter by chapter while you build.</p>
+  <div class="runtime-badge">
+    <div class="runtime-item"><div class="runtime-num">5</div><div class="runtime-label">Episodes</div></div>
+    <div class="runtime-item"><div class="runtime-num">62</div><div class="runtime-label">Minutes</div></div>
+    <div class="runtime-item"><div class="runtime-num">8</div><div class="runtime-label">Chapters</div></div>
+  </div>
+</div>
+
+<div class="episodes">
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 01</div>
+      <div class="ep-info">
+        <div class="ep-title">Introduction &amp; System Vision</div>
+        <div class="ep-chapters">Chapters 01 → 02</div>
+        <p class="ep-desc">What mcp-forge is and why it exists. The operator advantage of understanding MCP now. How mcp-forge connects to JARVAS-2, Benni Control Plane, and Benni Nexus — infrastructure inside a living OS, not an isolated library.</p>
+      </div>
+      <div class="ep-dur">23:31</div>
+    </div>
+    <div class="ep-player">
+      <audio controls preload="metadata">
+        <source src="audio/product-ep01-intro-vision.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">MCP protocol</span><span class="ep-topic">ForgeApp</span><span class="ep-topic">operator advantage</span><span class="ep-topic">Benni-os stack</span><span class="ep-topic">JARVAS-2</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 02</div>
+      <div class="ep-info">
+        <div class="ep-title">Architecture Deep Dive</div>
+        <div class="ep-chapters">Chapter 02 (deep)</div>
+        <p class="ep-desc">ForgeApp internals. How decorator resolution works. Pydantic v2 schema generation under the hood. Transport dispatch logic. Runtime lifecycle from import to execution. Why each layer exists — not just what it does.</p>
+      </div>
+      <div class="ep-dur">22:11</div>
+    </div>
+    <div class="ep-player">
+      <audio controls preload="metadata">
+        <source src="audio/product-ep02-architecture.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">ForgeApp</span><span class="ep-topic">decorator resolution</span><span class="ep-topic">Pydantic v2</span><span class="ep-topic">transport dispatch</span><span class="ep-topic">runtime lifecycle</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 03</div>
+      <div class="ep-info">
+        <div class="ep-title">Build &amp; Validation</div>
+        <div class="ep-chapters">Chapters 03 → 04</div>
+        <p class="ep-desc">Building a production tool from zero with @app.tool() and a Pydantic input model. Type coercion, nested models, optional fields, and error messages agents can actually act on.</p>
+      </div>
+      <div class="ep-dur">4:52</div>
+    </div>
+    <div class="ep-player">
+      <audio controls preload="metadata">
+        <source src="audio/product-ep03-build-validation.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">@app.tool()</span><span class="ep-topic">Pydantic BaseModel</span><span class="ep-topic">type coercion</span><span class="ep-topic">nested models</span><span class="ep-topic">input validation</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 04</div>
+      <div class="ep-info">
+        <div class="ep-title">Testing &amp; Deployment</div>
+        <div class="ep-chapters">Chapters 05 → 06</div>
+        <p class="ep-desc">ForgeTestClient — call your tools without a running server. Multi-transport deployment: STDIO, HTTP, SSE. Docker, Railway, and Fly.io deployment patterns.</p>
+      </div>
+      <div class="ep-dur">6:02</div>
+    </div>
+    <div class="ep-player">
+      <audio controls preload="metadata">
+        <source src="audio/product-ep04-testing-deploy.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">ForgeTestClient</span><span class="ep-topic">STDIO</span><span class="ep-topic">HTTP</span><span class="ep-topic">SSE</span><span class="ep-topic">Docker</span><span class="ep-topic">Railway</span><span class="ep-topic">Fly.io</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 05</div>
+      <div class="ep-info">
+        <div class="ep-title">Contribs &amp; Benni-os Stack</div>
+        <div class="ep-chapters">Chapters 07 → 08</div>
+        <p class="ep-desc">Built-in contribs — memory, filesystem, web. When to use contrib vs. build custom. The full zoom out: mcp-forge inside the complete Benni-os operator stack — JARVAS-2, Control Plane, Nexus.</p>
+      </div>
+      <div class="ep-dur">5:34</div>
+    </div>
+    <div class="ep-player">
+      <audio controls preload="metadata">
+        <source src="audio/product-ep05-contribs-stack.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">contribs</span><span class="ep-topic">memory tool</span><span class="ep-topic">filesystem</span><span class="ep-topic">web tool</span><span class="ep-topic">Control Plane</span><span class="ep-topic">Benni Nexus</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="doctrine">
+  <div class="quote-block">
+    <p>"The difference is not in the speed. It is in the architecture."</p>
+    <div class="author">— Benni-os · Operator Doctrine</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://benni-os.net" target="_blank">benni-os.net</a>
+    <a href="https://www.youtube.com/@Benni-OS1" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/benni_os/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61585892183984" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-copy">© 2026 Benni-os. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
