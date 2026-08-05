@@ -21,7 +21,6 @@
     .nav-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s}
     .nav-links a:hover{color:var(--accent)}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-    /* HERO */
     .hero{padding:7rem 2rem 4rem;text-align:center;max-width:820px;margin:0 auto;position:relative}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(124,92,252,.10) 0%,transparent 70%);pointer-events:none}
     .hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);border-radius:100px;padding:5px 14px;margin-bottom:1.5rem}
@@ -34,26 +33,22 @@
     .stat-item:last-child{border-right:none}
     .stat-num{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--accent3);display:block}
     .stat-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3)}
-    /* TOC */
     .toc{max-width:780px;margin:0 auto;padding:0 2rem 4rem}
     .toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:1.5rem}
     .toc-item{display:flex;gap:10px;align-items:flex-start;padding:.85rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color .2s}
     .toc-item:hover{border-color:var(--accent)}
     .toc-num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);min-width:28px}
     .toc-text{font-size:13px;color:var(--text2);font-weight:500}
-    /* LAYOUT */
     .section{max-width:780px;margin:0 auto;padding:4rem 2rem;border-top:1px solid var(--border)}
     .section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:.75rem}
     h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.2}
     h2 .a{color:var(--accent)} h2 .a3{color:var(--accent3)} h2 .gold{color:var(--gold)}
     h3{font-size:1.05rem;font-weight:700;margin:2rem 0 .6rem;color:var(--text)}
-    h4{font-size:.9rem;font-weight:700;margin:1.25rem 0 .4rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
     p{color:var(--text2);margin-bottom:1rem;font-size:15px;line-height:1.8}
     ul,ol{color:var(--text2);font-size:15px;line-height:1.8;padding-left:1.5rem;margin-bottom:1.25rem}
     li{margin-bottom:.4rem}
     strong{color:var(--text);font-weight:600}
     code{font-family:var(--mono);font-size:12.5px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--accent3)}
-    /* CALLOUT */
     .callout{background:var(--surface2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1.75rem 0}
     .callout.green{border-left-color:var(--accent3)}
     .callout.blue{border-left-color:var(--accent2)}
@@ -63,13 +58,8 @@
     .callout.blue .callout-label{color:var(--accent2)}
     .callout.gold .callout-label{color:var(--gold)}
     .callout p{font-size:13px;margin:0;color:var(--text2)}
-    /* CODE */
-    .code-wrap{margin:1.5rem 0}
-    .code-filename{font-size:10px;font-family:var(--mono);color:var(--text3);background:var(--surface2);border:1px solid var(--border);border-bottom:none;border-radius:6px 6px 0 0;padding:4px 12px;display:inline-block}
-    .code-block{background:#04040b;border:1px solid var(--border2);border-radius:0 10px 10px 10px;padding:1.25rem 1.5rem;font-family:var(--mono);font-size:12.5px;line-height:1.65;overflow-x:auto;color:#c8c8e8;margin:0}
-    .code-block.standalone{border-radius:10px;margin:1.5rem 0}
+    .code-block{background:#04040b;border:1px solid var(--border2);border-radius:10px;padding:1.25rem 1.5rem;font-family:var(--mono);font-size:12.5px;line-height:1.65;overflow-x:auto;color:#c8c8e8;margin:1.5rem 0}
     .kw{color:var(--accent)} .str{color:var(--accent3)} .cm{color:var(--text3)} .fn{color:var(--accent2)} .num{color:var(--gold)}
-    /* TABLE */
     .tbl{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:13px}
     .tbl th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);padding:.6rem 1rem;border-bottom:1px solid var(--border2)}
     .tbl td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
@@ -77,7 +67,6 @@
     .tbl td:first-child{font-family:var(--mono);color:var(--accent3);font-size:12px}
     .bg{background:rgba(0,229,160,.1);color:var(--accent3);border:1px solid rgba(0,229,160,.2);border-radius:4px;padding:2px 7px;font-size:11px;font-family:var(--mono)}
     .bp{background:rgba(124,92,252,.1);color:var(--accent);border:1px solid rgba(124,92,252,.2);border-radius:4px;padding:2px 7px;font-size:11px;font-family:var(--mono)}
-    /* AUDIO */
     .episode{border:1px solid var(--border2);border-radius:14px;overflow:hidden;margin-bottom:1.25rem;background:var(--surface)}
     .ep-header{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.5rem 1rem}
     .ep-num{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent3);background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);border-radius:5px;padding:3px 8px;flex-shrink:0;margin-top:3px}
@@ -86,35 +75,26 @@
     .ep-chapters{font-size:11px;color:var(--accent2);font-family:var(--mono);margin-bottom:.4rem}
     .ep-desc{font-size:13px;color:var(--text2);margin:0;line-height:1.6}
     .ep-dur{font-family:var(--mono);font-size:11px;color:var(--text3);flex-shrink:0}
-    .ep-player{padding:0 1.5rem 1.25rem}
-    audio{width:100%;height:42px;border-radius:7px;accent-color:var(--accent)}
-    .ep-topics{display:flex;flex-wrap:wrap;gap:5px;padding:0 1.5rem 1.25rem}
+    .ep-topics{display:flex;flex-wrap:wrap;gap:5px;padding:.75rem 1.5rem 1.25rem}
     .ep-topic{font-size:10px;color:var(--text3);background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 7px;font-family:var(--mono)}
-    /* BONUS */
     .bonus-section{max-width:780px;margin:0 auto;padding:4rem 2rem;border-top:1px solid var(--border)}
     .bonus-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.2);border-radius:100px;padding:4px 14px;margin-bottom:1.25rem}
     .bonus-card{background:var(--surface);border:1px solid rgba(245,200,66,.15);border-radius:14px;padding:2rem;margin-bottom:2rem}
     .bonus-card h3{font-size:1.1rem;margin:0 0 .75rem;color:var(--text)}
     .bonus-card p{font-size:14px;margin-bottom:1rem}
     .bonus-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.15);border-radius:4px;padding:2px 8px;font-family:var(--mono);margin-bottom:1rem}
-    /* QUOTE */
-    .quote-block{border-left:3px solid var(--accent);padding:1rem 1.5rem;background:var(--surface);border-radius:0 10px 10px 0;margin:2rem 0}
-    .quote-block p{font-size:1.05rem;font-style:italic;color:var(--text);margin:0}
-    .quote-block .author{font-size:12px;color:var(--accent);margin-top:.6rem;font-style:normal;font-weight:600}
-    /* CTA */
     .stack-cta{max-width:780px;margin:0 auto;padding:4rem 2rem;border-top:1px solid var(--border);text-align:center}
     .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
     .cta-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;transition:opacity .2s;box-shadow:0 4px 24px rgba(124,92,252,.3)}
     .cta-btn:hover{opacity:.88}
     .outline-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--border2);color:var(--text2);font-size:14px;font-weight:600;padding:12px 28px;border-radius:8px;text-decoration:none;transition:border-color .2s,color .2s}
     .outline-btn:hover{border-color:var(--accent);color:var(--accent)}
-    /* FOOTER */
     footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
     .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:.75rem;flex-wrap:wrap}
     .footer-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color .2s}
     .footer-links a:hover{color:var(--accent)}
     .footer-copy{font-size:11px;color:var(--text3)}
-    @media(max-width:600px){.hero,.section,.bonus-section,.stack-cta,.toc{padding-left:1.25rem;padding-right:1.25rem}nav{padding:0 1.25rem}.nav-links{display:none}.stat-row{max-width:100%}.ep-header{padding:1.1rem}.ep-player,.ep-topics{padding-left:1.1rem;padding-right:1.1rem}}
+    @media(max-width:600px){.hero,.section,.bonus-section,.stack-cta,.toc{padding-left:1.25rem;padding-right:1.25rem}nav{padding:0 1.25rem}.nav-links{display:none}}
   </style>
 </head>
 <body>
@@ -122,15 +102,15 @@
 <nav>
   <a class="nav-brand" href="https://benni-os.net" target="_blank"><div class="dot"></div><span>Benni-os</span></a>
   <div class="nav-links">
-    <a href="#playbook">Playbook</a>
-    <a href="#audio-guide">Audio Guide</a>
+    <a href="#ch01">Playbook</a>
+    <a href="#audio-guide">Audio</a>
     <a href="#bonus">Bonus</a>
   </div>
-  <span class="nav-tag">🔒 Operator Access</span>
+  <span class="nav-tag">&#128274; Operator Access</span>
 </nav>
 
 <div class="hero">
-  <div class="hero-badge"><div class="live"></div> Full Product · Unlocked</div>
+  <div class="hero-badge"><div class="live"></div> Full Product &middot; Unlocked</div>
   <h1>MCP Forge <span class="a">Operator</span><br/>Playbook <span class="a3">Complete</span></h1>
   <p class="hero-sub">8 chapters of operator-grade content. 5-part audio guide. 4 delivered bonuses. The complete system for building production MCP servers inside the Benni-os stack.</p>
   <div class="stat-row">
@@ -152,76 +132,395 @@
     <a class="toc-item" href="#ch06"><span class="toc-num">06</span><span class="toc-text">Multi-Transport Deploy</span></a>
     <a class="toc-item" href="#ch07"><span class="toc-num">07</span><span class="toc-text">Built-in Contribs</span></a>
     <a class="toc-item" href="#ch08"><span class="toc-num">08</span><span class="toc-text">Operator Workflow</span></a>
-    <a class="toc-item" href="#audio-guide"><span class="toc-num">🎙</span><span class="toc-text">5-Part Audio Guide</span></a>
-    <a class="toc-item" href="#bonus"><span class="toc-num">★</span><span class="toc-text">4 Delivered Bonuses</span></a>
+    <a class="toc-item" href="#audio-guide"><span class="toc-num">&#127897;</span><span class="toc-text">5-Part Audio Guide</span></a>
+    <a class="toc-item" href="#bonus"><span class="toc-num">&#9733;</span><span class="toc-text">4 Delivered Bonuses</span></a>
   </div>
 </div>
 
-<!-- ========== CH 01 ========== -->
+<!-- CH 01 -->
 <div class="section" id="ch01">
   <div class="section-label">Chapter 01</div>
   <h2>Why MCP and <span class="a">Why Now</span></h2>
-
-  <p>The Model Context Protocol is not a library, a framework, or a convenience tool. It is an infrastructure primitive — the same class of thing as TCP/IP, HTTP, or the POSIX file descriptor interface. Its purpose is to define, once and universally, how AI agents discover external tools, call them, and receive structured results. Everything else in the AI tooling ecosystem is built on top of that contract.</p>
-
-  <p>Before MCP existed, every AI integration was bespoke by necessity. Claude had its own tool call format. OpenAI had function calling with its own JSON schema conventions. AutoGen had its own tool abstraction. LangChain had its own. Each agent runtime spoke a different dialect, and every developer who wanted to expose a tool to multiple runtimes maintained N different integration layers for the same underlying business logic. The result was a fragmented ecosystem where tools were not portable, schemas drifted from code, and every new AI client required a new integration investment.</p>
-
-  <p>MCP ends that fragmentation. You write one server. You register tools once. The protocol handles discovery, schema negotiation, execution dispatch, and error propagation in a standardized way. Any MCP-compatible client — Claude Desktop, Cursor, VS Code Copilot, AutoGen, CrewAI, JARVAS-2, or any runtime implementing the spec — can call your tools without modification. Your tool becomes a universal interface.</p>
-
-  <h3>The Infrastructure Shift Argument</h3>
-  <p>Every major infrastructure primitive creates an asymmetric window of opportunity for the developers who adopt it early. REST APIs standardized in 2000–2005 — the developers who internalized that pattern built the API-first companies that dominate cloud infrastructure today. Docker containerization reached critical mass around 2014–2016 — the teams that built deployment patterns on containers early have a decade of operational experience that is nearly impossible to replicate quickly. MCP is in its 2014 Docker moment right now. The protocol is young enough that most developers are still building the wrong way, but mature enough that Anthropic, Microsoft, and major AI tooling vendors have committed to it as the standard.</p>
-
-  <p>The operators who build on MCP today — who internalize the architecture, develop reusable patterns, and build their tool libraries against the protocol — will have an advantage that compounds. Not because MCP is clever, but because infrastructure knowledge is sticky. Once your tools are MCP-native, they work with every agent runtime that ever implements the protocol. That is a permanent leverage point.</p>
-
+  <p>The Model Context Protocol is not a library or a convenience wrapper. It is an infrastructure primitive in the same class as HTTP or the POSIX file descriptor: a universal contract that defines, once, how AI agents discover tools, call them, and receive structured results. Before MCP, every agent runtime spoke a different dialect. Claude had its own tool format. OpenAI had function calling. AutoGen and LangChain each had their own abstractions. Every developer who wanted to expose tools to multiple runtimes maintained N separate integration layers for the same underlying logic.</p>
+  <p>MCP ends that fragmentation. You write one server, register tools once, and every MCP-compatible client — Claude Desktop, Cursor, VS Code Copilot, JARVAS-2, or any future runtime that implements the spec — calls your tools without modification. The protocol handles discovery, schema negotiation, execution dispatch, and error propagation. Your business logic ships once and runs everywhere.</p>
+  <h3>The Infrastructure Shift Window</h3>
+  <p>Every major infrastructure primitive creates an asymmetric advantage for early adopters. REST standardized around 2000–2005; the developers who internalized it built the API-first companies that dominate cloud today. Docker reached critical mass 2014–2016; teams that built on containers then have a decade of operational depth that is nearly impossible to replicate quickly. MCP is in its 2014 Docker moment right now — young enough that most developers are still building the wrong way, mature enough that Anthropic, Microsoft, and every major AI IDE have committed to it as the standard.</p>
   <div class="callout green">
-    <div class="callout-label">⚡ Operator Signal</div>
-    <p>The question is not whether MCP becomes the standard. Anthropic, Microsoft, and the major AI IDEs have already decided that. The question is whether you are building on it before or after the window closes. This playbook is the answer to that question.</p>
+    <div class="callout-label">&#9889; Operator Signal</div>
+    <p>The question is not whether MCP becomes the standard — that decision has already been made by Anthropic, Microsoft, and the major AI IDEs. The question is whether you are building on it before or after the window closes.</p>
   </div>
-
-  <h3>MCP vs. Previous Approaches</h3>
-  <p>To understand why MCP wins, you need to see what it replaced and what problem each previous approach left unsolved.</p>
   <table class="tbl">
-    <thead><tr><th>Approach</th><th>Schema</th><th>Transport</th><th>Portability</th><th>Agent-Ready</th></tr></thead>
+    <thead><tr><th>Approach</th><th>Schema</th><th>Transport</th><th>Portability</th></tr></thead>
     <tbody>
-      <tr><td>OpenAI function calling</td><td>Manual JSON Schema</td><td>HTTP only</td><td>✗ OpenAI-locked</td><td>Partial</td></tr>
-      <tr><td>LangChain tools</td><td>Docstring parsing</td><td>In-process only</td><td>✗ Framework-locked</td><td>Partial</td></tr>
-      <tr><td>Custom REST APIs</td><td>OpenAPI (manual)</td><td>HTTP</td><td>✓ But no agent protocol</td><td>✗ No</td></tr>
-      <tr><td>Plugins (deprecated)</td><td>OpenAPI manifest</td><td>HTTP</td><td>✗ ChatGPT-locked</td><td>Limited</td></tr>
-      <tr><td><strong>MCP + mcp-forge</strong></td><td>Auto via Pydantic</td><td>STDIO / HTTP / SSE</td><td><span class="bg">✓ Universal</span></td><td><span class="bg">✓ Native</span></td></tr>
+      <tr><td>OpenAI function calling</td><td>Manual JSON Schema</td><td>HTTP only</td><td>OpenAI-locked</td></tr>
+      <tr><td>LangChain tools</td><td>Docstring parsing</td><td>In-process only</td><td>Framework-locked</td></tr>
+      <tr><td>Custom REST APIs</td><td>OpenAPI (manual)</td><td>HTTP</td><td>No agent protocol</td></tr>
+      <tr><td><strong>MCP + mcp-forge</strong></td><td>Auto via Pydantic</td><td>STDIO / HTTP / SSE</td><td><span class="bg">Universal</span></td></tr>
     </tbody>
   </table>
-
-  <h3>What MCP Actually Specifies</h3>
-  <p>The protocol defines four core primitives that every MCP server must implement: <strong>tools</strong> (callable functions with typed inputs and outputs), <strong>resources</strong> (readable data streams like files or database cursors), <strong>prompts</strong> (reusable prompt templates with parameters), and <strong>sampling</strong> (the server can request completions from the client’s LLM). For most operator use cases — and for everything in this playbook — tools are the primary primitive. The rest exist for more advanced server patterns.</p>
-
-  <p>A tool in MCP is a JSON Schema object that describes the tool’s name, description, and input parameters. The client (agent runtime) uses the schema to understand what the tool does and how to call it. The server receives a call with validated parameters and returns a structured result. That is the entire contract. mcp-forge automates the schema generation side so you never write JSON Schema by hand.</p>
 </div>
 
-<!-- ========== CH 02 ========== -->
+<!-- CH 02 -->
 <div class="section" id="ch02">
   <div class="section-label">Chapter 02</div>
   <h2>mcp-forge <span class="a">Architecture</span></h2>
-
-  <p>mcp-forge is a FastAPI-style framework for the Model Context Protocol. Its design thesis is that the most painful part of building MCP servers is not the business logic — it is the plumbing. JSON schema generation from Python types, input validation and error serialization, transport lifecycle management, tool registry maintenance. mcp-forge automates every one of those concerns so you write tool logic, not infrastructure code.</p>
-
+  <p>mcp-forge is a FastAPI-style framework for MCP. Its thesis: the most painful part of building MCP servers is not the business logic — it is the plumbing. JSON schema generation from Python types, input validation, error serialization, transport lifecycle, tool registry maintenance. mcp-forge automates every one of those so you write tool logic only.</p>
   <h3>The ForgeApp Object</h3>
-  <p><code>ForgeApp</code> is the central object in every mcp-forge server. It holds the tool registry, manages transport initialization and lifecycle, exposes the MCP-compliant capability negotiation interface, and handles the request/response cycle for every tool call. You instantiate it once per server and hang tools off it with the <code>@app.tool()</code> decorator.</p>
-
-  <div class="code-wrap">
-  <div class="code-block standalone">
+  <p><code>ForgeApp</code> is the central object in every mcp-forge server. It holds the tool registry, manages transport initialization, exposes MCP capability negotiation, and handles the request/response cycle for every tool call. You instantiate it once and register tools with <code>@app.tool()</code>.</p>
+  <div class="code-block">
 <span class="kw">from</span> mcp_forge <span class="kw">import</span> <span class="fn">ForgeApp</span>
 
 app = <span class="fn">ForgeApp</span>(
     name=<span class="str">"operator-server"</span>,
     version=<span class="str">"1.0.0"</span>,
     description=<span class="str">"Production MCP server — Benni-os stack"</span>
-)
-  </div></div>
+)</div>
+  <h3>Schema Generation at Import Time</h3>
+  <p>When Python imports your server module, every <code>@app.tool()</code> decorator fires immediately. mcp-forge inspects the decorated function's Pydantic input model, extracts every field with its type, default, constraints, and <code>Field(description=...)</code> metadata, and generates a fully-compliant MCP JSON Schema stored in the tool registry. Schema is zero-cost at request time and zero-drift from your code. Add a field to the Pydantic model and the schema updates automatically on next import — no separate schema file, no code generation step, no sync risk.</p>
+  <h3>Transport Layer</h3>
+  <p>mcp-forge ships three transports out of the box: <strong>STDIO</strong> for local agent integrations like Claude Desktop and Cursor, <strong>HTTP+SSE</strong> for long-running remote servers, and <strong>WebSocket</strong> for streaming use cases. You choose the transport at server startup; the tool code is transport-agnostic. A tool written for local STDIO testing deploys to HTTP+SSE production with zero changes.</p>
+</div>
 
-  <h3>Decorator Resolution at Import Time</h3>
-  <p>When Python imports your server module, every <code>@app.tool()</code> decorator fires immediately. At that moment, mcp-forge inspects the decorated function’s signature using Python’s type inspection API. It identifies the Pydantic <code>BaseModel</code> input type, extracts every field with its type annotation, default value, constraints, and <code>Field(description=...)</code> metadata, and generates a fully-compliant MCP JSON Schema object. This schema is stored in the tool registry alongside the function reference.</p>
+<!-- CH 03 -->
+<div class="section" id="ch03">
+  <div class="section-label">Chapter 03</div>
+  <h2>First <span class="a">Production Tool</span></h2>
+  <p>A production tool in mcp-forge has three components: a Pydantic input model that defines the typed contract, a decorated async function that contains the business logic, and a structured return value that the agent runtime can reason about. The Pydantic model is the source of truth — it drives schema generation, input validation, error messages, and documentation simultaneously.</p>
+  <div class="code-block">
+<span class="kw">from</span> pydantic <span class="kw">import</span> <span class="fn">BaseModel</span>, <span class="fn">Field</span>
+<span class="kw">from</span> mcp_forge <span class="kw">import</span> <span class="fn">ForgeApp</span>, <span class="fn">ToolResult</span>
 
-  <p>This means schema generation is zero-cost at request time and zero-drift from your code. The schema is always exactly what your input model specifies. If you add a field to the Pydantic model, the schema updates automatically on the next import. There is no separate schema file to maintain, no code generation step, no sync issue.</p>
+app = <span class="fn">ForgeApp</span>(name=<span class="str">"my-server"</span>, version=<span class="str">"1.0.0"</span>)
 
-  <h3>The Pydantic Bridge</h3>
-  <p>mcp-forge uses Pydantic
+<span class="kw">class</span> <span class="fn">SearchInput</span>(<span class="fn">BaseModel</span>):
+    query: str = <span class="fn">Field</span>(description=<span class="str">"Search query string"</span>, min_length=<span class="num">1</span>)
+    limit: int = <span class="fn">Field</span>(default=<span class="num">10</span>, ge=<span class="num">1</span>, le=<span class="num">100</span>, description=<span class="str">"Max results"</span>)
+    include_metadata: bool = <span class="fn">Field</span>(default=<span class="num">False</span>)
+
+<span class="fn">@app.tool</span>(description=<span class="str">"Search the knowledge base and return ranked results"</span>)
+<span class="kw">async def</span> <span class="fn">search_knowledge_base</span>(inp: <span class="fn">SearchInput</span>) -&gt; <span class="fn">ToolResult</span>:
+    results = <span class="kw">await</span> <span class="fn">run_search</span>(inp.query, limit=inp.limit)
+    <span class="kw">return</span> <span class="fn">ToolResult</span>(
+        content=results,
+        metadata={<span class="str">"count"</span>: len(results), <span class="str">"query"</span>: inp.query}
+    )</div>
+  <div class="callout blue">
+    <div class="callout-label">&#128161; Pattern</div>
+    <p>Every tool should have exactly one Pydantic input model, one <code>ToolResult</code> return, and zero side effects outside its declared scope. This keeps tools composable, testable, and safe for agent orchestration chains where the same tool may be called 50 times in a session.</p>
+  </div>
+  <h3>Naming and Description Discipline</h3>
+  <p>The <code>description</code> field on <code>@app.tool()</code> and on every <code>Field()</code> is not documentation — it is the primary signal the LLM uses to decide whether and how to call your tool. Write descriptions as precise, action-oriented statements. "Search the knowledge base and return ranked results" is good. "Search" is not. "Searches the knowledge base for documents matching the query string and returns up to <code>limit</code> results sorted by relevance score" is better. The more precisely you describe the tool, the more reliably agents select it in the right context.</p>
+</div>
+
+<!-- CH 04 -->
+<div class="section" id="ch04">
+  <div class="section-label">Chapter 04</div>
+  <h2>Input <span class="a">Validation</span></h2>
+  <p>Validation is your first line of defense in a production MCP server. Agents will call your tools with unexpected inputs — empty strings where text is required, negative numbers where positive integers are expected, enum values that have drifted from your schema. mcp-forge delegates all validation to Pydantic v2, which means your validation logic lives in the same place as your type definitions: the input model.</p>
+  <h3>Pydantic v2 Constraint Reference</h3>
+  <table class="tbl">
+    <thead><tr><th>Field type</th><th>Constraint</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>str</td><td>min_length, max_length, pattern</td><td><code>Field(min_length=1, max_length=200)</code></td></tr>
+      <tr><td>int / float</td><td>ge, gt, le, lt, multiple_of</td><td><code>Field(ge=0, le=100)</code></td></tr>
+      <tr><td>list</td><td>min_length, max_length</td><td><code>Field(min_length=1, max_length=50)</code></td></tr>
+      <tr><td>Enum</td><td>Literal type</td><td><code>mode: Literal["fast","deep"]</code></td></tr>
+      <tr><td>Custom</td><td>@field_validator</td><td>Cross-field logic</td></tr>
+    </tbody>
+  </table>
+  <h3>Custom Validators</h3>
+  <p>For business logic that cannot be expressed with simple constraints — for example, "if mode is 'deep' then min_tokens must be at least 500" — use Pydantic's <code>@model_validator</code>. This runs after all field-level validation and has access to all fields simultaneously. Raise a <code>ValueError</code> and mcp-forge serializes it into a structured MCP error that the agent runtime can parse and report.</p>
+  <div class="code-block">
+<span class="kw">from</span> pydantic <span class="kw">import</span> <span class="fn">model_validator</span>
+
+<span class="kw">class</span> <span class="fn">AnalysisInput</span>(<span class="fn">BaseModel</span>):
+    mode: <span class="fn">Literal</span>[<span class="str">"fast"</span>, <span class="str">"deep"</span>]
+    min_tokens: int = <span class="fn">Field</span>(default=<span class="num">100</span>, ge=<span class="num">100</span>)
+
+    <span class="fn">@model_validator</span>(mode=<span class="str">"after"</span>)
+    <span class="kw">def</span> <span class="fn">check_deep_tokens</span>(self):
+        <span class="kw">if</span> self.mode == <span class="str">"deep"</span> <span class="kw">and</span> self.min_tokens &lt; <span class="num">500</span>:
+            <span class="kw">raise</span> <span class="fn">ValueError</span>(<span class="str">"deep mode requires min_tokens >= 500"</span>)
+        <span class="kw">return</span> self</div>
+</div>
+
+<!-- CH 05 -->
+<div class="section" id="ch05">
+  <div class="section-label">Chapter 05</div>
+  <h2>Testing Like <span class="a3">an Operator</span></h2>
+  <p>Production-grade MCP tools require three layers of testing: unit tests that validate tool logic in isolation, integration tests that validate the full MCP request/response cycle, and contract tests that validate schema stability across versions. Most developers do only the first layer and discover the other two failure modes in production.</p>
+  <h3>Unit Testing Tool Logic</h3>
+  <p>Because mcp-forge tools are plain async Python functions, you can call them directly in tests without starting a server. Pass a valid input model instance, assert on the <code>ToolResult</code> return. Use <code>pytest-asyncio</code> for async test support.</p>
+  <div class="code-block">
+<span class="kw">import</span> pytest
+<span class="kw">from</span> myserver <span class="kw">import</span> search_knowledge_base, SearchInput
+
+<span class="fn">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_search_returns_results</span>():
+    result = <span class="kw">await</span> <span class="fn">search_knowledge_base</span>(<span class="fn">SearchInput</span>(query=<span class="str">"mcp transport"</span>))
+    <span class="kw">assert</span> len(result.content) &gt; <span class="num">0</span>
+    <span class="kw">assert</span> result.metadata[<span class="str">"query"</span>] == <span class="str">"mcp transport"</span></div>
+  <h3>Integration Testing via MCP Client</h3>
+  <p>mcp-forge ships a test client <code>ForgeTestClient</code> that starts your server in-process, sends real MCP protocol messages over STDIO, and returns parsed MCP responses. This tests the full stack including schema negotiation, capability exchange, and error serialization — the parts that unit tests miss entirely.</p>
+  <div class="callout gold">
+    <div class="callout-label">&#9888; Operator Warning</div>
+    <p>Schema drift is the most common production failure mode for MCP servers. A tool that passed all unit tests can break agent integrations silently if a field was renamed or a constraint was tightened in a way that existing callers do not expect. Run contract tests on every deploy.</p>
+  </div>
+</div>
+
+<!-- CH 06 -->
+<div class="section" id="ch06">
+  <div class="section-label">Chapter 06</div>
+  <h2>Multi-Transport <span class="a">Deploy</span></h2>
+  <p>A production MCP server needs to run in at least two modes: local STDIO for agent IDEs like Claude Desktop and Cursor, and remote HTTP+SSE for cloud-hosted agent runtimes, CI pipelines, and multi-tenant deployments. mcp-forge separates tool logic from transport so the same server binary handles both without any code changes.</p>
+  <h3>STDIO Mode (Local)</h3>
+  <p>STDIO transport is the default for local integrations. The agent runtime starts your server as a subprocess and communicates via stdin/stdout using the MCP JSON-RPC wire format. This is zero-configuration: no ports, no auth, no network. Claude Desktop, Cursor, and VS Code MCP extension all use this mode.</p>
+  <div class="code-block">
+<span class="cm"># pyproject.toml entry point</span>
+[project.scripts]
+my-server = <span class="str">"myserver:app.run_stdio"</span>
+
+<span class="cm"># Claude Desktop config (~/.claude/mcp_servers.json)</span>
+{
+  <span class="str">"mcpServers"</span>: {
+    <span class="str">"my-server"</span>: {
+      <span class="str">"command"</span>: <span class="str">"my-server"</span>
+    }
+  }
+}</div>
+  <h3>HTTP+SSE Mode (Remote)</h3>
+  <p>For remote deployments, mcp-forge starts an ASGI server (Uvicorn by default) that exposes the MCP HTTP+SSE transport on a configurable port. The <code>/mcp</code> endpoint handles capability negotiation and tool calls. The <code>/mcp/events</code> SSE stream delivers server-initiated messages and progress updates for long-running tools.</p>
+  <div class="code-block">
+<span class="cm"># Start remote server</span>
+my-server --transport http --host 0.0.0.0 --port 8000
+
+<span class="cm"># Docker</span>
+FROM python:3.12-slim
+RUN pip install my-server
+CMD [<span class="str">"my-server"</span>, <span class="str">"--transport"</span>, <span class="str">"http"</span>, <span class="str">"--host"</span>, <span class="str">"0.0.0.0"</span>, <span class="str">"--port"</span>, <span class="str">"8000"</span>]</div>
+</div>
+
+<!-- CH 07 -->
+<div class="section" id="ch07">
+  <div class="section-label">Chapter 07</div>
+  <h2>Built-in <span class="a3">Contribs</span></h2>
+  <p>mcp-forge ships a <code>contribs</code> package with production-ready tool implementations covering the most common operator patterns. These are not demos — they are full implementations with validation, error handling, and observability hooks that you can use directly or fork as starting points.</p>
+  <table class="tbl">
+    <thead><tr><th>Contrib</th><th>What it does</th><th>Key inputs</th></tr></thead>
+    <tbody>
+      <tr><td>web_search</td><td>Multi-provider web search with result ranking</td><td>query, limit, provider</td></tr>
+      <tr><td>file_ops</td><td>Safe read/write/list with path sandboxing</td><td>path, operation, content</td></tr>
+      <tr><td>code_exec</td><td>Sandboxed Python execution with timeout</td><td>code, timeout, packages</td></tr>
+      <tr><td>db_query</td><td>Read-only SQL query with result pagination</td><td>query, connection_id, limit</td></tr>
+      <tr><td>http_fetch</td><td>Authenticated HTTP requests with retry</td><td>url, method, headers, body</td></tr>
+      <tr><td>vector_search</td><td>Semantic search against configured vector store</td><td>query, collection, top_k</td></tr>
+    </tbody>
+  </table>
+  <p>Each contrib is a standalone Python module. Import only what you need. Every contrib exposes its own Pydantic input model and <code>ToolResult</code> subtype, so you can extend them by subclassing the input model and adding fields — the extended schema propagates to MCP automatically.</p>
+  <div class="callout blue">
+    <div class="callout-label">&#128161; Composition Pattern</div>
+    <p>The most powerful operator pattern is tool composition: build a high-level tool that calls two or three contribs in sequence. A <code>research_topic</code> tool that calls <code>web_search</code>, then <code>http_fetch</code> for each result, then summarizes — all inside one MCP tool boundary with one schema contract exposed to the agent.</p>
+  </div>
+</div>
+
+<!-- CH 08 -->
+<div class="section" id="ch08">
+  <div class="section-label">Chapter 08</div>
+  <h2>Operator <span class="gold">Workflow</span></h2>
+  <p>The operator workflow is the repeatable system that takes you from business requirement to deployed, monitored production tool. Most developers have the coding part but skip the upstream (requirement decomposition) and downstream (observability, versioning) steps. Those skipped steps are where production incidents originate.</p>
+  <h3>The 5-Step Operator Loop</h3>
+  <ol>
+    <li><strong>Decompose</strong> — Define the tool's single responsibility. If you cannot describe what the tool does in one sentence without the word "and", split it.</li>
+    <li><strong>Model</strong> — Write the Pydantic input model first, before any logic. The model is your spec. Get it reviewed before writing business code.</li>
+    <li><strong>Implement</strong> — Write the async function. Keep it under 50 lines. If it is longer, extract helpers or split the tool.</li>
+    <li><strong>Test</strong> — Unit test, integration test, contract test. Do not deploy without all three passing.</li>
+    <li><strong>Observe</strong> — Every tool call should emit a structured log event with input hash, output hash, latency, and error type. mcp-forge's <code>@app.tool(observe=True)</code> flag does this automatically.</li>
+  </ol>
+  <h3>Versioning Strategy</h3>
+  <p>MCP tool schemas are a public API. Agents build calling patterns around your schema — change a field name or tighten a constraint and you break those patterns silently. Version your tools with <code>v1_search</code>, <code>v2_search</code> naming and keep the previous version live during the transition window. mcp-forge's capability negotiation lets clients advertise which tool versions they support.</p>
+  <div class="callout green">
+    <div class="callout-label">&#9989; Operator Checklist</div>
+    <p>Before deploying any tool to production: schema review done, contract test passing, observability enabled, error codes documented, rollback plan defined. These five gates prevent 90% of production MCP incidents.</p>
+  </div>
+</div>
+
+<!-- AUDIO GUIDE -->
+<div class="section" id="audio-guide">
+  <div class="section-label">Audio Guide</div>
+  <h2>5-Part <span class="a">Audio Guide</span></h2>
+  <p>The audio guide covers every chapter at depth, with worked examples, war stories, and live architectural walkthroughs. Each episode is self-contained — listen in order for the full progression or jump to the episode that matches your current build stage.</p>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 01</div>
+      <div class="ep-info">
+        <div class="ep-title">Why MCP Changes Everything for Operators</div>
+        <div class="ep-chapters">Covers Ch.01 &mdash; 14 min</div>
+        <div class="ep-desc">The infrastructure primitive argument. Why Docker 2014 is the right mental model. What operators who ignore MCP will face in 18 months. Three companies already building moats on MCP tool libraries.</div>
+      </div>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">infrastructure-primitives</span>
+      <span class="ep-topic">adoption-timing</span>
+      <span class="ep-topic">competitive-moat</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 02</div>
+      <div class="ep-info">
+        <div class="ep-title">mcp-forge Architecture Deep Dive</div>
+        <div class="ep-chapters">Covers Ch.02 &mdash; 11 min</div>
+        <div class="ep-desc">ForgeApp internals. How decorator resolution works at import time. The Pydantic bridge and why zero-drift matters. Transport abstraction layer and why your tool code stays transport-agnostic.</div>
+      </div>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">decorator-resolution</span>
+      <span class="ep-topic">pydantic-bridge</span>
+      <span class="ep-topic">transport-abstraction</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 03</div>
+      <div class="ep-info">
+        <div class="ep-title">Building Production Tools: First Principles</div>
+        <div class="ep-chapters">Covers Ch.03 &ndash; 04 &mdash; 13 min</div>
+        <div class="ep-desc">The three components of a production tool. Naming and description discipline as LLM signal engineering. Pydantic v2 constraint taxonomy. Cross-field validators and when to use model_validator vs field_validator.</div>
+      </div>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">tool-design</span>
+      <span class="ep-topic">description-engineering</span>
+      <span class="ep-topic">validation-patterns</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 04</div>
+      <div class="ep-info">
+        <div class="ep-title">Testing and Deployment Patterns</div>
+        <div class="ep-chapters">Covers Ch.05 &ndash; 06 &mdash; 12 min</div>
+        <div class="ep-desc">Three-layer testing model. ForgeTestClient walkthrough. Contract tests that catch schema drift before production. STDIO vs HTTP+SSE decision framework. Zero-downtime transport migration.</div>
+      </div>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">testing-layers</span>
+      <span class="ep-topic">contract-tests</span>
+      <span class="ep-topic">deployment</span>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="ep-header">
+      <div class="ep-num">EP 05</div>
+      <div class="ep-info">
+        <div class="ep-title">The Operator Workflow and Scaling Your Tool Library</div>
+        <div class="ep-chapters">Covers Ch.07 &ndash; 08 &mdash; 12 min</div>
+        <div class="ep-desc">Contribs deep dive. Tool composition patterns. The 5-step operator loop. Versioning strategy for breaking schema changes. Observability setup. Building a personal tool library that compounds over time.</div>
+      </div>
+    </div>
+    <div class="ep-topics">
+      <span class="ep-topic">tool-composition</span>
+      <span class="ep-topic">operator-loop</span>
+      <span class="ep-topic">observability</span>
+      <span class="ep-topic">versioning</span>
+    </div>
+  </div>
+</div>
+
+<!-- BONUS -->
+<div class="bonus-section" id="bonus">
+  <div class="bonus-label">&#9733; Included Bonuses</div>
+  <h2>4 Delivered <span class="gold">Bonuses</span></h2>
+
+  <div class="bonus-card">
+    <div class="bonus-tag">BONUS 01</div>
+    <h3>mcp-forge Production Starter Kit</h3>
+    <p>A complete, production-ready mcp-forge server template including <code>pyproject.toml</code> with pinned dependencies, <code>Dockerfile</code> for both STDIO and HTTP+SSE modes, GitHub Actions workflow for automated testing and Docker build, pre-configured <code>pytest</code> suite with ForgeTestClient integration tests, and <code>observability.py</code> with structured logging and error tracking setup.</p>
+    <p>Clone it, rename the server, add your tools. Everything else is already wired. The starter kit is the baseline configuration that every Benni-os production MCP server runs on.</p>
+    <div class="code-block">
+git clone https://github.com/benni-os/mcp-forge-starter
+cd mcp-forge-starter
+cp .env.example .env
+pip install -e ".[dev]"
+pytest  <span class="cm"># all green</span>
+my-server --transport stdio  <span class="cm"># ready for Claude Desktop</span></div>
+  </div>
+
+  <div class="bonus-card">
+    <div class="bonus-tag">BONUS 02</div>
+    <h3>Tool Description Engineering Swipe File</h3>
+    <p>A curated reference of 40 production tool descriptions covering search, file operations, code execution, data transformation, API integrations, and agent orchestration patterns. Each entry shows the weak version (what most developers write), the strong version (what operators write), and the annotation explaining exactly what signal difference the LLM sees between them.</p>
+    <p>Use this file every time you write a <code>description</code> field. The difference between a tool that agents select reliably and one that gets called in the wrong context almost always comes down to description precision. This swipe file closes that gap immediately.</p>
+    <table class="tbl">
+      <thead><tr><th>Pattern</th><th>Weak</th><th>Strong</th></tr></thead>
+      <tbody>
+        <tr><td>search</td><td>"Search documents"</td><td>"Full-text search across the knowledge base; returns ranked results with relevance score and source URL"</td></tr>
+        <tr><td>write_file</td><td>"Write to a file"</td><td>"Write content to a file at the specified path; creates parent directories if missing; returns bytes written"</td></tr>
+        <tr><td>run_query</td><td>"Run SQL query"</td><td>"Execute a read-only SQL SELECT against the analytics database; returns rows as JSON array; max 1000 rows"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bonus-card">
+    <div class="bonus-tag">BONUS 03</div>
+    <h3>JARVAS-2 MCP Integration Guide</h3>
+    <p>Step-by-step guide for connecting your mcp-forge server to the JARVAS-2 agent runtime inside the Benni-os stack. Covers capability registration, tool namespace conventions, delegation patterns (when JARVAS-2 should call your tool vs. handle internally), health probe configuration, and the <code>POST /delegate</code> API that JARVAS-2 uses to dispatch tasks to registered MCP servers.</p>
+    <p>Includes the full <code>jarvas_config.yaml</code> schema, annotated example configurations for three server types (search, file ops, code execution), and the error handling contract between JARVAS-2 and mcp-forge servers when a tool call fails mid-chain.</p>
+    <div class="code-block">
+<span class="cm"># jarvas_config.yaml — JARVAS-2 MCP server registration</span>
+mcp_servers:
+  - name: <span class="str">operator-server</span>
+    transport: <span class="str">http</span>
+    endpoint: <span class="str">http://localhost:8000/mcp</span>
+    health_probe: <span class="str">http://localhost:8000/health</span>
+    delegation_priority: <span class="num">1</span>
+    tool_namespace: <span class="str">ops</span>
+    timeout_ms: <span class="num">30000</span></div>
+  </div>
+
+  <div class="bonus-card">
+    <div class="bonus-tag">BONUS 04</div>
+    <h3>MCP Operator Incident Playbook</h3>
+    <p>A battle-tested runbook for the 12 most common production MCP incidents: schema drift breaking agent integrations, tool timeout causing agent loop failures, validation errors surfacing as cryptic agent messages, transport connection drops mid-session, tool version conflicts between server and client, and more. Each incident entry includes: symptoms, root cause taxonomy, diagnostic commands, fix procedure, and prevention checklist.</p>
+    <p>This is the document you want already open when something breaks at 2 AM. More importantly, it is the document that prevents most of those 2 AM incidents from happening at all — the prevention checklists at the end of each entry encode the hard-won lessons from dozens of production deployments.</p>
+    <table class="tbl">
+      <thead><tr><th>Incident</th><th>Primary symptom</th><th>First diagnostic step</th></tr></thead>
+      <tbody>
+        <tr><td>Schema drift</td><td>Agent calls tool with wrong field names</td><td>Compare deployed schema vs. code model</td></tr>
+        <tr><td>Tool timeout</td><td>Agent loop stalls indefinitely</td><td>Check timeout_ms config vs. tool p99 latency</td></tr>
+        <tr><td>Transport drop</td><td>SSE stream closes mid-session</td><td>Check server keep-alive and proxy timeout config</td></tr>
+        <tr><td>Version conflict</td><td>Client receives "unknown tool" error</td><td>Check capability negotiation handshake log</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="stack-cta">
+  <div class="section-label">Next Step</div>
+  <h2>You Have the <span class="a">Complete System</span></h2>
+  <p>8 chapters. 62 minutes of audio. 4 production-ready bonuses. The full operator stack for building MCP servers that work in any agent runtime, deployed at any scale, inside the Benni-os stack.</p>
+  <p>The operators who build on MCP now — before the window closes — will have a tool library and deployment expertise that compounds over every agent project they run for the next decade. This playbook is the foundation. The rest is execution.</p>
+  <div class="cta-row">
+    <a class="cta-btn" href="https://benni-os.net" target="_blank">&#9658; Go to Benni-os</a>
+    <a class="outline-btn" href="#ch01">&#8598; Read from start</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://benni-os.net" target="_blank">benni-os.net</a>
+    <a href="#ch01">Playbook</a>
+    <a href="#audio-guide">Audio Guide</a>
+    <a href="#bonus">Bonuses</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Benni-os &mdash; Operator Access &mdash; All rights reserved</div>
+</footer>
+
+</body>
+</html>
