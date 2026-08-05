@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCP Forge — Operator Audio Guide · Benni-os</title>
-  <meta name="description" content="5-part operator audio guide for the MCP Forge Playbook. Benni-os voice. 62 minutes." />
+  <title>MCP Forge Operator Playbook — Full Product · Benni-os</title>
+  <meta name="description" content="The complete MCP Forge Operator Playbook. 8 chapters, 5-part audio guide, bonus resources. Benni-os operator stack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -14,50 +14,141 @@
       --bg: #080810; --surface: #0f0f1a; --surface2: #16162a;
       --border: #1e1e3a; --border2: #2a2a4a;
       --accent: #7c5cfc; --accent2: #4f8ef7; --accent3: #00e5a0;
+      --gold: #f5c842;
       --text: #f0f0ff; --text2: #9090b0; --text3: #5a5a7a;
       --mono: 'JetBrains Mono', monospace; --sans: 'Inter', sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent3); box-shadow: 0 0 8px var(--accent3); animation: pulse 2s infinite; }
     .nav-brand span { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.08em; text-transform: uppercase; }
     .nav-tag { font-size: 11px; font-weight: 600; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 4px; padding: 3px 10px; letter-spacing: 0.06em; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { font-size: 12px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .product-hero { padding: 7rem 2rem 3rem; text-align: center; max-width: 760px; margin: 0 auto; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(124,92,252,0.08); border: 1px solid rgba(124,92,252,0.2); border-radius: 100px; padding: 5px 14px; margin-bottom: 1.5rem; }
-    h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1rem; }
+
+    /* HERO */
+    .product-hero { padding: 7rem 2rem 4rem; text-align: center; max-width: 800px; margin: 0 auto; position: relative; }
+    .product-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124,92,252,0.10) 0%, transparent 70%); pointer-events:none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 100px; padding: 5px 14px; margin-bottom: 1.5rem; }
+    .hero-badge .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); animation: pulse 1.5s infinite; }
+    h1 { font-size: clamp(1.9rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1rem; }
     h1 .accent { color: var(--accent); } h1 .accent3 { color: var(--accent3); }
-    .hero-sub { font-size: 1.05rem; color: var(--text2); max-width: 560px; margin: 0 auto 2rem; }
-    .runtime-badge { display: inline-flex; gap: 1.5rem; background: var(--surface); border: 1px solid var(--border2); border-radius: 10px; padding: 0.75rem 1.5rem; margin-bottom: 3rem; }
-    .runtime-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-    .runtime-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--accent3); }
-    .runtime-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); }
-    .episodes { max-width: 760px; margin: 0 auto; padding: 0 2rem 5rem; display: flex; flex-direction: column; gap: 0; }
-    .episode { border: 1px solid var(--border2); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background: var(--surface); transition: border-color 0.2s; }
-    .episode:hover { border-color: var(--accent); }
-    .ep-header { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem 1.75rem 1.25rem; }
-    .ep-num { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 6px; padding: 4px 10px; flex-shrink: 0; margin-top: 2px; }
+    .hero-sub { font-size: 1.05rem; color: var(--text2); max-width: 580px; margin: 0 auto 2rem; }
+    .stat-row { display: flex; justify-content: center; gap: 0; background: var(--surface); border: 1px solid var(--border2); border-radius: 12px; overflow: hidden; max-width: 480px; margin: 0 auto 3rem; }
+    .stat-item { flex: 1; padding: 1rem; text-align: center; border-right: 1px solid var(--border2); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--accent3); display: block; }
+    .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); }
+
+    /* TOC */
+    .toc { max-width: 760px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 1.5rem; }
+    .toc-item { display: flex; gap: 10px; align-items: flex-start; padding: 0.85rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
+    .toc-item:hover { border-color: var(--accent); }
+    .toc-num { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent); min-width: 28px; }
+    .toc-text { font-size: 13px; color: var(--text2); font-weight: 500; }
+
+    /* SECTION LAYOUT */
+    .chapter-section { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; border-top: 1px solid var(--border); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.75rem; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.2; }
+    h2 .accent { color: var(--accent); }
+    h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--text); }
+    p { color: var(--text2); margin-bottom: 1rem; font-size: 15px; line-height: 1.75; }
+    ul, ol { color: var(--text2); font-size: 15px; line-height: 1.75; padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.35rem; }
+    strong { color: var(--text); font-weight: 600; }
+
+    /* CALLOUT */
+    .callout { background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .callout.green { border-left-color: var(--accent3); }
+    .callout.blue { border-left-color: var(--accent2); }
+    .callout-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .callout.green .callout-label { color: var(--accent3); }
+    .callout.blue .callout-label { color: var(--accent2); }
+    .callout p { font-size: 13px; margin: 0; color: var(--text2); }
+
+    /* CODE */
+    .code-block { background: #050508; border: 1px solid var(--border2); border-radius: 10px; padding: 1.25rem 1.5rem; font-family: var(--mono); font-size: 12.5px; line-height: 1.65; overflow-x: auto; margin: 1.25rem 0; color: #c8c8e8; }
+    .code-block .kw { color: var(--accent); }
+    .code-block .str { color: var(--accent3); }
+    .code-block .cm { color: var(--text3); }
+    .code-block .fn { color: var(--accent2); }
+    .code-block .num { color: var(--gold); }
+    .code-filename { font-size: 10px; font-family: var(--mono); color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-bottom: none; border-radius: 6px 6px 0 0; padding: 4px 12px; display: inline-block; margin-bottom: -1px; }
+
+    /* TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
+    .data-table th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent2); padding: 0.6rem 1rem; border-bottom: 1px solid var(--border2); }
+    .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text2); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { font-family: var(--mono); color: var(--accent3); font-size: 12px; }
+    .badge-green { background: rgba(0,229,160,0.1); color: var(--accent3); border: 1px solid rgba(0,229,160,0.2); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: var(--mono); }
+    .badge-purple { background: rgba(124,92,252,0.1); color: var(--accent); border: 1px solid rgba(124,92,252,0.2); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: var(--mono); }
+
+    /* AUDIO EPISODE */
+    .episode { border: 1px solid var(--border2); border-radius: 14px; overflow: hidden; margin-bottom: 1.25rem; background: var(--surface); }
+    .ep-header { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 1.5rem 1rem; }
+    .ep-num { font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--accent3); background: rgba(0,229,160,0.08); border: 1px solid rgba(0,229,160,0.2); border-radius: 5px; padding: 3px 8px; flex-shrink: 0; margin-top: 3px; }
     .ep-info { flex: 1; }
-    .ep-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
-    .ep-chapters { font-size: 12px; color: var(--accent2); font-family: var(--mono); margin-bottom: 0.5rem; }
-    .ep-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin: 0; }
-    .ep-dur { font-family: var(--mono); font-size: 12px; color: var(--text3); flex-shrink: 0; padding-top: 2px; }
-    .ep-player { padding: 0 1.75rem 1.5rem; }
-    audio { width: 100%; height: 44px; border-radius: 8px; accent-color: var(--accent); }
-    .ep-topics { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 1.75rem 1.5rem; }
-    .ep-topic { font-size: 11px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; font-family: var(--mono); }
-    .doctrine { max-width: 760px; margin: 0 auto; padding: 0 2rem 5rem; }
-    .quote-block { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; background: var(--surface); border-radius: 0 10px 10px 0; }
-    .quote-block p { font-size: 1.1rem; font-style: italic; color: var(--text); margin: 0; }
-    .quote-block .author { font-size: 12px; color: var(--accent); margin-top: 0.75rem; font-style: normal; font-weight: 600; }
+    .ep-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .ep-chapters { font-size: 11px; color: var(--accent2); font-family: var(--mono); margin-bottom: 0.4rem; }
+    .ep-desc { font-size: 13px; color: var(--text2); margin: 0; line-height: 1.6; }
+    .ep-dur { font-family: var(--mono); font-size: 11px; color: var(--text3); flex-shrink: 0; }
+    .ep-player { padding: 0 1.5rem 1.25rem; }
+    audio { width: 100%; height: 42px; border-radius: 7px; accent-color: var(--accent); }
+    .ep-topics { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.5rem 1.25rem; }
+    .ep-topic { font-size: 10px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; font-family: var(--mono); }
+
+    /* BONUS */
+    .bonus-section { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; border-top: 1px solid var(--border); }
+    .bonus-label { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: rgba(245,200,66,0.08); border: 1px solid rgba(245,200,66,0.2); border-radius: 100px; padding: 4px 14px; margin-bottom: 1.25rem; }
+    .bonus-grid { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .bonus-card { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid rgba(245,200,66,0.15); border-radius: 12px; transition: border-color 0.2s; }
+    .bonus-card:hover { border-color: var(--gold); }
+    .bonus-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .bonus-card h3 { font-size: 15px; margin: 0 0 0.3rem; color: var(--text); }
+    .bonus-card p { font-size: 13px; margin: 0; color: var(--text2); }
+    .bonus-tag { display: inline-block; margin-top: 0.5rem; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: rgba(245,200,66,0.08); border: 1px solid rgba(245,200,66,0.15); border-radius: 4px; padding: 2px 8px; font-family: var(--mono); }
+
+    /* STACK CTA */
+    .stack-cta { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; border-top: 1px solid var(--border); text-align: center; }
+    .stack-cta h2 { margin-bottom: 0.75rem; }
+    .stack-cta p { color: var(--text2); max-width: 520px; margin: 0 auto 2rem; }
+    .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 8px; text-decoration: none; transition: opacity 0.2s; box-shadow: 0 4px 24px rgba(124,92,252,0.3); }
+    .cta-btn:hover { opacity: 0.88; }
+    .outline-btn { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--border2); color: var(--text2); font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 8px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .outline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* QUOTE */
+    .quote-block { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; background: var(--surface); border-radius: 0 10px 10px 0; margin: 2rem 0; }
+    .quote-block p { font-size: 1.05rem; font-style: italic; color: var(--text); margin: 0; }
+    .quote-block .author { font-size: 12px; color: var(--accent); margin-top: 0.6rem; font-style: normal; font-weight: 600; }
+
+    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
     .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
     .footer-links a { font-size: 13px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent); }
     .footer-copy { font-size: 11px; color: var(--text3); }
-    @media (max-width: 600px) { .product-hero { padding: 6rem 1.25rem 2rem; } .episodes { padding: 0 1.25rem 3rem; } .ep-header { padding: 1.25rem; } .ep-player, .ep-topics { padding-left: 1.25rem; padding-right: 1.25rem; } nav { padding: 0 1.25rem; } }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 0; }
+    @media (max-width: 600px) {
+      .product-hero { padding: 6rem 1.25rem 3rem; }
+      .chapter-section, .bonus-section, .stack-cta, .toc { padding-left: 1.25rem; padding-right: 1.25rem; }
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .stat-row { max-width: 100%; }
+      .ep-header { padding: 1.1rem; }
+      .ep-player, .ep-topics { padding-left: 1.1rem; padding-right: 1.1rem; }
+    }
   </style>
 </head>
 <body>
@@ -67,40 +158,394 @@
     <div class="dot"></div>
     <span>Benni-os</span>
   </a>
+  <div class="nav-links">
+    <a href="#audio-guide">Audio Guide</a>
+    <a href="#playbook">Playbook</a>
+    <a href="#bonus">Bonus</a>
+  </div>
   <span class="nav-tag">🔒 Operator Access</span>
 </nav>
 
+<!-- HERO -->
 <div class="product-hero">
-  <div class="hero-badge">🎙 Operator Audio Guide · Unlocked</div>
-  <h1>MCP Forge <span class="accent">Operator</span><br/>Audio <span class="accent3">Guide</span></h1>
-  <p class="hero-sub">Five deep-dive episodes narrated in the Benni-os operator voice. Built with NotebookLM. Listen chapter by chapter while you build.</p>
-  <div class="runtime-badge">
-    <div class="runtime-item"><div class="runtime-num">5</div><div class="runtime-label">Episodes</div></div>
-    <div class="runtime-item"><div class="runtime-num">62</div><div class="runtime-label">Minutes</div></div>
-    <div class="runtime-item"><div class="runtime-num">8</div><div class="runtime-label">Chapters</div></div>
+  <div class="hero-badge"><div class="live"></div> Full Product · Unlocked</div>
+  <h1>MCP Forge <span class="accent">Operator</span><br/>Playbook <span class="accent3">Complete</span></h1>
+  <p class="hero-sub">8 chapters of operator-grade text. 5-part audio guide in the Benni-os voice. Bonus resources. Everything in one place.</p>
+  <div class="stat-row">
+    <div class="stat-item"><span class="stat-num">8</span><span class="stat-label">Chapters</span></div>
+    <div class="stat-item"><span class="stat-num">62</span><span class="stat-label">Min Audio</span></div>
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Episodes</span></div>
+    <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Bonuses</span></div>
   </div>
 </div>
 
-<div class="episodes">
+<!-- TOC -->
+<div class="toc">
+  <div class="section-label">Contents</div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#ch01"><span class="toc-num">01</span><span class="toc-text">Why MCP and Why Now</span></a>
+    <a class="toc-item" href="#ch02"><span class="toc-num">02</span><span class="toc-text">mcp-forge Architecture</span></a>
+    <a class="toc-item" href="#ch03"><span class="toc-num">03</span><span class="toc-text">First Production Tool</span></a>
+    <a class="toc-item" href="#ch04"><span class="toc-num">04</span><span class="toc-text">Input Validation</span></a>
+    <a class="toc-item" href="#ch05"><span class="toc-num">05</span><span class="toc-text">Testing Like an Operator</span></a>
+    <a class="toc-item" href="#ch06"><span class="toc-num">06</span><span class="toc-text">Multi-Transport Deploy</span></a>
+    <a class="toc-item" href="#ch07"><span class="toc-num">07</span><span class="toc-text">Built-in Contribs</span></a>
+    <a class="toc-item" href="#ch08"><span class="toc-num">08</span><span class="toc-text">Operator Workflow</span></a>
+    <a class="toc-item" href="#audio-guide"><span class="toc-num">🎙</span><span class="toc-text">5-Part Audio Guide</span></a>
+    <a class="toc-item" href="#bonus"><span class="toc-num">★</span><span class="toc-text">Bonus Resources</span></a>
+  </div>
+</div>
+
+<!-- CH 01 -->
+<div class="chapter-section" id="ch01">
+  <div class="section-label">Chapter 01</div>
+  <h2>Why MCP and <span class="accent">Why Now</span></h2>
+  <p>The Model Context Protocol is not a library. It is an infrastructure primitive — the same way TCP/IP is not an app but the layer that makes apps possible. MCP defines how AI agents discover, call, and receive results from external tools in a standardized, transport-agnostic way.</p>
+  <p>Before MCP, every AI integration was bespoke. Claude had its own tool format. OpenAI had function calling. AutoGen had its own schema. Each agent runtime spoke a different dialect. Developers maintained N different integration layers for the same underlying tools.</p>
+  <p>MCP ends that. One server. Any client. The protocol handles discovery, schema, execution, and error propagation. Your tool becomes universally callable — by Claude Desktop, Cursor, VS Code Copilot, AutoGen, CrewAI, or any runtime that implements the protocol.</p>
+
+  <h3>The Operator Advantage</h3>
+  <p>Infrastructure shifts create asymmetric opportunities. The developers who understood REST in 2005 built the APIs that everything runs on today. The developers who understood containers in 2014 built the deployment patterns everyone copies. MCP is that moment for AI agent tooling.</p>
+  <div class="callout green">
+    <div class="callout-label">⚡ Operator Signal</div>
+    <p>The question is not whether MCP becomes the standard. The question is whether you are building on it before or after everyone else. The playbook you are reading right now is the answer.</p>
+  </div>
+
+  <h3>MCP vs. Previous Approaches</h3>
+  <table class="data-table">
+    <thead><tr><th>Approach</th><th>Schema</th><th>Transport</th><th>Multi-client</th></tr></thead>
+    <tbody>
+      <tr><td>OpenAI functions</td><td>Manual JSON</td><td>HTTP only</td><td>✗ Locked to OpenAI</td></tr>
+      <tr><td>LangChain tools</td><td>Docstring-based</td><td>In-process</td><td>✗ Framework-locked</td></tr>
+      <tr><td>Custom REST APIs</td><td>OpenAPI (manual)</td><td>HTTP</td><td>✓ But no agent protocol</td></tr>
+      <tr><td><strong>MCP + mcp-forge</strong></td><td>Auto (Pydantic)</td><td>STDIO/HTTP/SSE</td><td><span class="badge-green">✓ Universal</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CH 02 -->
+<div class="chapter-section" id="ch02">
+  <div class="section-label">Chapter 02</div>
+  <h2>mcp-forge <span class="accent">Architecture</span></h2>
+  <p>mcp-forge is a FastAPI-style framework for the Model Context Protocol. Its core insight: the most painful part of building MCP servers is not the business logic — it is the plumbing. JSON schema generation, input validation, transport dispatch, error serialization. mcp-forge automates all of it.</p>
+
+  <h3>The ForgeApp Object</h3>
+  <p><code>ForgeApp</code> is the central object. It holds the tool registry, manages transport lifecycle, and exposes the MCP-compliant interface. You instantiate it once and hang tools off it with the <code>@app.tool()</code> decorator.</p>
+  <div class="code-block">
+<span class="kw">from</span> mcp_forge <span class="kw">import</span> <span class="fn">ForgeApp</span>
+
+app = <span class="fn">ForgeApp</span>(
+    name=<span class="str">"my-server"</span>,
+    version=<span class="str">"1.0.0"</span>,
+    description=<span class="str">"Production MCP server"</span>
+)
+  </div>
+
+  <h3>Decorator Resolution</h3>
+  <p>When you decorate a function with <code>@app.tool()</code>, mcp-forge inspects the function signature at import time. It reads the type annotations and the Pydantic input model to generate a fully-compliant MCP JSON schema automatically. No manual schema writing. No drift between code and schema.</p>
+
+  <h3>Transport Dispatch</h3>
+  <p>mcp-forge supports three transports from the same codebase. STDIO is the standard for local clients like Claude Desktop. HTTP exposes the server as a web service. SSE adds streaming support for long-running tools. You select the transport at runtime with a single flag — the tool code never changes.</p>
+  <table class="data-table">
+    <thead><tr><th>Transport</th><th>Use Case</th><th>Flag</th></tr></thead>
+    <tbody>
+      <tr><td>STDIO</td><td>Claude Desktop, local agents</td><td><code>--transport stdio</code></td></tr>
+      <tr><td>HTTP</td><td>Remote clients, custom integrations</td><td><code>--transport http</code></td></tr>
+      <tr><td>SSE</td><td>Streaming, long-running tools</td><td><code>--transport sse</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-label">Architecture Note</div>
+    <p>The transport layer is completely decoupled from tool logic. A tool you write today for Claude Desktop runs unchanged as an HTTP endpoint tomorrow. This is the operator advantage of building on the right abstraction.</p>
+  </div>
+</div>
+
+<!-- CH 03 -->
+<div class="chapter-section" id="ch03">
+  <div class="section-label">Chapter 03</div>
+  <h2>Building Your First <span class="accent">Production Tool</span></h2>
+  <p>Install mcp-forge and build a production-ready tool in under 10 minutes. This chapter walks every step from zero to a running, testable MCP server.</p>
+
+  <h3>Step 1 — Install</h3>
+  <div class="code-block">
+pip install mcp-forge
+  </div>
+
+  <h3>Step 2 — Define Your Tool</h3>
+  <div class="code-filename">server.py</div>
+  <div class="code-block">
+<span class="kw">from</span> mcp_forge <span class="kw">import</span> <span class="fn">ForgeApp</span>
+<span class="kw">from</span> pydantic <span class="kw">import</span> <span class="fn">BaseModel</span>, <span class="fn">Field</span>
+<span class="kw">from</span> typing <span class="kw">import</span> <span class="fn">Optional</span>
+
+app = <span class="fn">ForgeApp</span>(<span class="str">"operator-server"</span>)
+
+<span class="kw">class</span> <span class="fn">SearchInput</span>(<span class="fn">BaseModel</span>):
+    query: <span class="fn">str</span> = <span class="fn">Field</span>(..., description=<span class="str">"Search query string"</span>)
+    limit: <span class="fn">int</span> = <span class="fn">Field</span>(<span class="num">10</span>, ge=<span class="num">1</span>, le=<span class="num">100</span>, description=<span class="str">"Max results"</span>)
+    filter_tag: <span class="fn">Optional</span>[<span class="fn">str</span>] = <span class="fn">Field</span>(<span class="str">None</span>, description=<span class="str">"Filter by tag"</span>)
+
+<span class="kw">@app.tool</span>()
+<span class="kw">async def</span> <span class="fn">search</span>(input: <span class="fn">SearchInput</span>) -> <span class="fn">dict</span>:
+    <span class="cm"># your business logic here</span>
+    results = <span class="fn">run_search</span>(input.query, input.limit, input.filter_tag)
+    <span class="kw">return</span> {<span class="str">"results"</span>: results, <span class="str">"count"</span>: <span class="fn">len</span>(results)}
+  </div>
+
+  <h3>Step 3 — Run</h3>
+  <div class="code-block">
+<span class="cm"># STDIO (Claude Desktop)</span>
+python server.py --transport stdio
+
+<span class="cm"># HTTP (port 8000)</span>
+python server.py --transport http --port <span class="num">8000</span>
+
+<span class="cm"># SSE (streaming)</span>
+python server.py --transport sse --port <span class="num">8001</span>
+  </div>
+
+  <h3>Step 4 — Connect to Claude Desktop</h3>
+  <p>Add to your <code>claude_desktop_config.json</code>:</p>
+  <div class="code-block">
+{
+  <span class="str">"mcpServers"</span>: {
+    <span class="str">"operator-server"</span>: {
+      <span class="str">"command"</span>: <span class="str">"python"</span>,
+      <span class="str">"args"</span>: [<span class="str">"/path/to/server.py"</span>, <span class="str">"--transport"</span>, <span class="str">"stdio"</span>]
+    }
+  }
+}
+  </div>
+  <div class="callout green">
+    <div class="callout-label">Operator Checkpoint</div>
+    <p>At this point your tool is live, schema-validated, and callable by any MCP client. That is the output of 10 minutes with mcp-forge vs. 2 hours of manual wiring.</p>
+  </div>
+</div>
+
+<!-- CH 04 -->
+<div class="chapter-section" id="ch04">
+  <div class="section-label">Chapter 04</div>
+  <h2>Input Validation <span class="accent">That Actually Works</span></h2>
+  <p>Bad input kills agents. When a tool fails silently, the agent retries, hallucinates a workaround, or crashes. mcp-forge uses Pydantic v2 to validate every input before your tool code runs — and surfaces errors in a format agents can act on.</p>
+
+  <h3>Core Patterns</h3>
+  <div class="code-block">
+<span class="kw">from</span> pydantic <span class="kw">import</span> <span class="fn">BaseModel</span>, <span class="fn">Field</span>, <span class="fn">field_validator</span>
+<span class="kw">from</span> typing <span class="kw">import</span> <span class="fn">Literal</span>, <span class="fn">Optional</span>
+<span class="kw">from</span> datetime <span class="kw">import</span> <span class="fn">date</span>
+
+<span class="kw">class</span> <span class="fn">ReportInput</span>(<span class="fn">BaseModel</span>):
+    <span class="cm"># Required with description (shows in MCP schema)</span>
+    repo: <span class="fn">str</span> = <span class="fn">Field</span>(..., description=<span class="str">"GitHub repo slug e.g. owner/repo"</span>)
+
+    <span class="cm"># Literal enum — agent can only pass valid values</span>
+    format: <span class="fn">Literal</span>[<span class="str">"json"</span>, <span class="str">"markdown"</span>, <span class="str">"csv"</span>] = <span class="str">"json"</span>
+
+    <span class="cm"># Optional with default</span>
+    since: <span class="fn">Optional</span>[<span class="fn">date</span>] = <span class="str">None</span>
+
+    <span class="cm"># Bounded integer</span>
+    max_items: <span class="fn">int</span> = <span class="fn">Field</span>(<span class="num">50</span>, ge=<span class="num">1</span>, le=<span class="num">500</span>)
+
+    <span class="cm"># Custom validator</span>
+    @<span class="fn">field_validator</span>(<span class="str">"repo"</span>)
+    <span class="kw">def</span> <span class="fn">validate_repo_slug</span>(cls, v):
+        <span class="kw">if</span> <span class="str">"/"</span> <span class="kw">not in</span> v:
+            <span class="kw">raise</span> <span class="fn">ValueError</span>(<span class="str">"repo must be in owner/repo format"</span>)
+        <span class="kw">return</span> v
+  </div>
+
+  <h3>Nested Models</h3>
+  <p>For complex tools, nest Pydantic models. mcp-forge generates the nested JSON schema automatically and validates the full depth before execution.</p>
+  <div class="code-block">
+<span class="kw">class</span> <span class="fn">PaginationConfig</span>(<span class="fn">BaseModel</span>):
+    page: <span class="fn">int</span> = <span class="fn">Field</span>(<span class="num">1</span>, ge=<span class="num">1</span>)
+    per_page: <span class="fn">int</span> = <span class="fn">Field</span>(<span class="num">20</span>, ge=<span class="num">1</span>, le=<span class="num">100</span>)
+
+<span class="kw">class</span> <span class="fn">ListInput</span>(<span class="fn">BaseModel</span>):
+    query: <span class="fn">str</span>
+    pagination: <span class="fn">PaginationConfig</span> = <span class="fn">PaginationConfig</span>()
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-label">Why This Matters</div>
+    <p>Pydantic validation errors are automatically serialized into MCP error responses with field-level detail. The agent receives a structured message it can parse — not a traceback it cannot act on.</p>
+  </div>
+</div>
+
+<!-- CH 05 -->
+<div class="chapter-section" id="ch05">
+  <div class="section-label">Chapter 05</div>
+  <h2>Testing Like <span class="accent">an Operator</span></h2>
+  <p>You should know your MCP server works before the agent finds out it doesn't. ForgeTestClient lets you call tools directly in your test suite — no running server, no spawned process, no network calls.</p>
+
+  <h3>ForgeTestClient Setup</h3>
+  <div class="code-filename">test_server.py</div>
+  <div class="code-block">
+<span class="kw">import</span> pytest
+<span class="kw">from</span> mcp_forge.testing <span class="kw">import</span> <span class="fn">ForgeTestClient</span>
+<span class="kw">from</span> server <span class="kw">import</span> app
+
+<span class="kw">@pytest.fixture</span>
+<span class="kw">def</span> <span class="fn">client</span>():
+    <span class="kw">return</span> <span class="fn">ForgeTestClient</span>(app)
+
+<span class="kw">def</span> <span class="fn">test_search_returns_results</span>(client):
+    result = client.<span class="fn">call</span>(
+        <span class="str">"search"</span>,
+        {<span class="str">"query"</span>: <span class="str">"mcp-forge"</span>, <span class="str">"limit"</span>: <span class="num">5</span>}
+    )
+    <span class="kw">assert</span> result[<span class="str">"count"</span>] <= <span class="num">5</span>
+
+<span class="kw">def</span> <span class="fn">test_search_validates_limit</span>(client):
+    <span class="kw">with</span> pytest.<span class="fn">raises</span>(<span class="fn">ValidationError</span>):
+        client.<span class="fn">call</span>(<span class="str">"search"</span>, {<span class="str">"query"</span>: <span class="str">"x"</span>, <span class="str">"limit"</span>: <span class="num">999</span>})
+  </div>
+
+  <h3>Operator Testing Checklist</h3>
+  <ul>
+    <li>Test every tool with valid input — verify the output shape</li>
+    <li>Test boundary values for every bounded field (min, max, edge)</li>
+    <li>Test invalid input — verify the error is a <code>ValidationError</code>, not a crash</li>
+    <li>Test missing required fields — the error message must be agent-readable</li>
+    <li>Test nested model validation depth</li>
+    <li>Run tests in CI before any deploy</li>
+  </ul>
+</div>
+
+<!-- CH 06 -->
+<div class="chapter-section" id="ch06">
+  <div class="section-label">Chapter 06</div>
+  <h2>Multi-Transport <span class="accent">Deployment</span></h2>
+  <p>The same server.py file runs on STDIO, HTTP, and SSE. Deployment is a configuration decision, not a rewrite. Here are the production patterns for each target.</p>
+
+  <h3>Docker</h3>
+  <div class="code-filename">Dockerfile</div>
+  <div class="code-block">
+<span class="kw">FROM</span> python:<span class="num">3.11</span>-slim
+<span class="kw">WORKDIR</span> /app
+<span class="kw">COPY</span> requirements.txt .
+<span class="kw">RUN</span> pip install --no-cache-dir -r requirements.txt
+<span class="kw">COPY</span> . .
+<span class="kw">EXPOSE</span> <span class="num">8000</span>
+<span class="kw">CMD</span> [<span class="str">"python"</span>, <span class="str">"server.py"</span>, <span class="str">"--transport"</span>, <span class="str">"http"</span>, <span class="str">"--port"</span>, <span class="str">"8000"</span>]
+  </div>
+
+  <h3>Railway (60-second deploy)</h3>
+  <div class="code-block">
+<span class="cm"># Install Railway CLI</span>
+npm i -g @railway/cli
+
+<span class="cm"># Deploy</span>
+railway login
+railway init
+railway up
+
+<span class="cm"># Set transport via env var</span>
+railway variables set MCP_TRANSPORT=http
+  </div>
+
+  <h3>Fly.io</h3>
+  <div class="code-block">
+fly launch --no-deploy
+fly secrets set MCP_TRANSPORT=http
+fly deploy
+  </div>
+
+  <div class="callout green">
+    <div class="callout-label">Operator Pattern</div>
+    <p>Use STDIO for local dev and Claude Desktop. Use HTTP for any remote agent or custom client. Use SSE when tools run long jobs and need to stream progress back to the agent.</p>
+  </div>
+</div>
+
+<!-- CH 07 -->
+<div class="chapter-section" id="ch07">
+  <div class="section-label">Chapter 07</div>
+  <h2>Built-in <span class="accent">Contribs</span></h2>
+  <p>mcp-forge ships with a contribs library — pre-built tool implementations for the most common categories. One import. Zero boilerplate.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Contrib</th><th>What It Gives You</th><th>When to Use</th></tr></thead>
+    <tbody>
+      <tr><td>memory</td><td>Key-value store, semantic search</td><td>Agent needs to remember context across calls</td></tr>
+      <tr><td>filesystem</td><td>Read/write files, list directories</td><td>Tools that manipulate local or remote files</td></tr>
+      <tr><td>web</td><td>HTTP fetch, HTML parsing, search</td><td>Tools that need to retrieve web content</td></tr>
+      <tr><td>shell</td><td>Run subprocess commands safely</td><td>Automation tools, CI/CD integrations</td></tr>
+      <tr><td>db</td><td>SQLite and Postgres query tools</td><td>Data retrieval and write operations</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Using a Contrib</h3>
+  <div class="code-block">
+<span class="kw">from</span> mcp_forge <span class="kw">import</span> <span class="fn">ForgeApp</span>
+<span class="kw">from</span> mcp_forge.contribs <span class="kw">import</span> <span class="fn">memory</span>, <span class="fn">web</span>
+
+app = <span class="fn">ForgeApp</span>(<span class="str">"operator-server"</span>)
+app.<span class="fn">include</span>(memory)
+app.<span class="fn">include</span>(web)
+
+<span class="cm"># memory and web tools are now registered and schema-ready</span>
+  </div>
+
+  <h3>Custom vs. Contrib</h3>
+  <ul>
+    <li><strong>Use contrib</strong> when the category matches and you don't need custom business logic inside the tool</li>
+    <li><strong>Build custom</strong> when the tool is specific to your domain, has non-standard validation, or needs to integrate with internal systems</li>
+    <li><strong>Extend contrib</strong> when the base behavior is right but you need pre/post hooks</li>
+  </ul>
+</div>
+
+<!-- CH 08 -->
+<div class="chapter-section" id="ch08">
+  <div class="section-label">Chapter 08</div>
+  <h2>Operator Workflow — <span class="accent">The Full Stack</span></h2>
+  <p>mcp-forge is not the end of the stack. It is the tool infrastructure layer inside a larger system. This chapter maps how it connects to JARVAS-2, Benni Control Plane, and Benni Nexus — and how you think about tool design when you are building for an autonomous system, not a human user.</p>
+
+  <h3>The Benni-os Layer Map</h3>
+  <table class="data-table">
+    <thead><tr><th>Layer</th><th>Component</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Tool Infrastructure</td><td>mcp-forge</td><td>Exposes tools via MCP protocol</td></tr>
+      <tr><td>Execution Engine</td><td>JARVAS-2</td><td>Autonomous task planning and tool dispatch</td></tr>
+      <tr><td>Orchestration</td><td>Control Plane</td><td>Multi-agent coordination, state, oversight</td></tr>
+      <tr><td>Operator Gateway</td><td>Benni Nexus</td><td>External interface, auth, routing</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Designing Tools for Agents</h3>
+  <p>When the caller is an agent, not a human, tool design changes. Agents retry on failure. Agents cannot read ambiguous errors. Agents may call the same tool 50 times in parallel. Design for that reality:</p>
+  <ul>
+    <li><strong>Be idempotent.</strong> The same input should always produce the same safe result.</li>
+    <li><strong>Return structured data.</strong> Agents parse JSON — not prose. Every tool should return a typed, predictable schema.</li>
+    <li><strong>Surface actionable errors.</strong> An error message of "something went wrong" is useless to an agent. Return the field, the constraint, and the received value.</li>
+    <li><strong>Keep tools atomic.</strong> One tool does one thing. Compose at the agent layer, not inside the tool.</li>
+  </ul>
+
+  <div class="quote-block">
+    <p>"The difference is not in the speed. It is in the architecture."</p>
+    <div class="author">— Benni-os · Operator Doctrine</div>
+  </div>
+</div>
+
+<!-- AUDIO GUIDE -->
+<div class="chapter-section" id="audio-guide">
+  <div class="section-label">Audio Guide · 5 Episodes · 62 Minutes</div>
+  <h2>The Playbook <span class="accent3">In Operator Voice</span></h2>
+  <p>Five deep-dive episodes narrated in the Benni-os operator voice. Built with NotebookLM. Audio and text are in sinergia — not repetition. The audio adds context, narrative, and architectural reasoning. The text is your execution reference.</p>
 
   <div class="episode">
     <div class="ep-header">
       <div class="ep-num">EP 01</div>
       <div class="ep-info">
         <div class="ep-title">Introduction &amp; System Vision</div>
-        <div class="ep-chapters">Chapters 01 → 02</div>
-        <p class="ep-desc">What mcp-forge is and why it exists. The operator advantage of understanding MCP now. How mcp-forge connects to JARVAS-2, Benni Control Plane, and Benni Nexus — infrastructure inside a living OS, not an isolated library.</p>
+        <div class="ep-chapters">Chapters 01 → 02 · Context &amp; Vision Layer</div>
+        <p class="ep-desc">The operator context behind mcp-forge. Why this exists inside Benni-os and not as an isolated tool. The structural advantage of building on MCP now and how the system vision connects every layer of the stack.</p>
       </div>
       <div class="ep-dur">23:31</div>
     </div>
-    <div class="ep-player">
-      <audio controls preload="metadata">
-        <source src="audio/product-ep01-intro-vision.m4a" type="audio/mp4" />
-      </audio>
-    </div>
-    <div class="ep-topics">
-      <span class="ep-topic">MCP protocol</span><span class="ep-topic">ForgeApp</span><span class="ep-topic">operator advantage</span><span class="ep-topic">Benni-os stack</span><span class="ep-topic">JARVAS-2</span>
-    </div>
+    <div class="ep-player"><audio controls preload="metadata"><source src="audio/product-ep01-intro-vision.m4a" type="audio/mp4" /></audio></div>
+    <div class="ep-topics"><span class="ep-topic">MCP protocol</span><span class="ep-topic">ForgeApp</span><span class="ep-topic">operator advantage</span><span class="ep-topic">Benni-os stack</span><span class="ep-topic">JARVAS-2</span></div>
   </div>
 
   <div class="episode">
@@ -108,19 +553,13 @@
       <div class="ep-num">EP 02</div>
       <div class="ep-info">
         <div class="ep-title">Architecture Deep Dive</div>
-        <div class="ep-chapters">Chapter 02 (deep)</div>
-        <p class="ep-desc">ForgeApp internals. How decorator resolution works. Pydantic v2 schema generation under the hood. Transport dispatch logic. Runtime lifecycle from import to execution. Why each layer exists — not just what it does.</p>
+        <div class="ep-chapters">Chapter 02 · Deep Technical Layer</div>
+        <p class="ep-desc">The mental model behind ForgeApp internals. Why each layer of the architecture exists, not just what it does. Decorator resolution, schema generation, transport dispatch — explained as an operator who built the system, not as a tutorial narrator.</p>
       </div>
       <div class="ep-dur">22:11</div>
     </div>
-    <div class="ep-player">
-      <audio controls preload="metadata">
-        <source src="audio/product-ep02-architecture.m4a" type="audio/mp4" />
-      </audio>
-    </div>
-    <div class="ep-topics">
-      <span class="ep-topic">ForgeApp</span><span class="ep-topic">decorator resolution</span><span class="ep-topic">Pydantic v2</span><span class="ep-topic">transport dispatch</span><span class="ep-topic">runtime lifecycle</span>
-    </div>
+    <div class="ep-player"><audio controls preload="metadata"><source src="audio/product-ep02-architecture.m4a" type="audio/mp4" /></audio></div>
+    <div class="ep-topics"><span class="ep-topic">ForgeApp</span><span class="ep-topic">decorator resolution</span><span class="ep-topic">Pydantic v2</span><span class="ep-topic">transport dispatch</span><span class="ep-topic">runtime lifecycle</span></div>
   </div>
 
   <div class="episode">
@@ -128,19 +567,13 @@
       <div class="ep-num">EP 03</div>
       <div class="ep-info">
         <div class="ep-title">Build &amp; Validation</div>
-        <div class="ep-chapters">Chapters 03 → 04</div>
-        <p class="ep-desc">Building a production tool from zero with @app.tool() and a Pydantic input model. Type coercion, nested models, optional fields, and error messages agents can actually act on.</p>
+        <div class="ep-chapters">Chapters 03 → 04 · Execution Layer</div>
+        <p class="ep-desc">The validation mindset operators use. What most developers get wrong about input models. Why error message design is part of tool architecture. Live walkthrough of the build patterns in Chapters 03 and 04.</p>
       </div>
       <div class="ep-dur">4:52</div>
     </div>
-    <div class="ep-player">
-      <audio controls preload="metadata">
-        <source src="audio/product-ep03-build-validation.m4a" type="audio/mp4" />
-      </audio>
-    </div>
-    <div class="ep-topics">
-      <span class="ep-topic">@app.tool()</span><span class="ep-topic">Pydantic BaseModel</span><span class="ep-topic">type coercion</span><span class="ep-topic">nested models</span><span class="ep-topic">input validation</span>
-    </div>
+    <div class="ep-player"><audio controls preload="metadata"><source src="audio/product-ep03-build-validation.m4a" type="audio/mp4" /></audio></div>
+    <div class="ep-topics"><span class="ep-topic">@app.tool()</span><span class="ep-topic">Pydantic BaseModel</span><span class="ep-topic">type coercion</span><span class="ep-topic">error design</span></div>
   </div>
 
   <div class="episode">
@@ -148,19 +581,13 @@
       <div class="ep-num">EP 04</div>
       <div class="ep-info">
         <div class="ep-title">Testing &amp; Deployment</div>
-        <div class="ep-chapters">Chapters 05 → 06</div>
-        <p class="ep-desc">ForgeTestClient — call your tools without a running server. Multi-transport deployment: STDIO, HTTP, SSE. Docker, Railway, and Fly.io deployment patterns.</p>
+        <div class="ep-chapters">Chapters 05 → 06 · Ops Layer</div>
+        <p class="ep-desc">The operator testing mindset. Why ForgeTestClient is not optional. Deployment strategy decisions — when to use Railway vs. Fly.io vs. VPS. The deployment tradeoffs no tutorial will tell you.</p>
       </div>
       <div class="ep-dur">6:02</div>
     </div>
-    <div class="ep-player">
-      <audio controls preload="metadata">
-        <source src="audio/product-ep04-testing-deploy.m4a" type="audio/mp4" />
-      </audio>
-    </div>
-    <div class="ep-topics">
-      <span class="ep-topic">ForgeTestClient</span><span class="ep-topic">STDIO</span><span class="ep-topic">HTTP</span><span class="ep-topic">SSE</span><span class="ep-topic">Docker</span><span class="ep-topic">Railway</span><span class="ep-topic">Fly.io</span>
-    </div>
+    <div class="ep-player"><audio controls preload="metadata"><source src="audio/product-ep04-testing-deploy.m4a" type="audio/mp4" /></audio></div>
+    <div class="ep-topics"><span class="ep-topic">ForgeTestClient</span><span class="ep-topic">STDIO</span><span class="ep-topic">HTTP</span><span class="ep-topic">Docker</span><span class="ep-topic">Railway</span><span class="ep-topic">Fly.io</span></div>
   </div>
 
   <div class="episode">
@@ -168,33 +595,79 @@
       <div class="ep-num">EP 05</div>
       <div class="ep-info">
         <div class="ep-title">Contribs &amp; Benni-os Stack</div>
-        <div class="ep-chapters">Chapters 07 → 08</div>
-        <p class="ep-desc">Built-in contribs — memory, filesystem, web. When to use contrib vs. build custom. The full zoom out: mcp-forge inside the complete Benni-os operator stack — JARVAS-2, Control Plane, Nexus.</p>
+        <div class="ep-chapters">Chapters 07 → 08 · Stack Layer</div>
+        <p class="ep-desc">The full zoom out. mcp-forge as one layer inside a system that executes autonomously. How contribs accelerate tool coverage. The operator vision of what this stack becomes when all layers are connected and running.</p>
       </div>
       <div class="ep-dur">5:34</div>
     </div>
-    <div class="ep-player">
-      <audio controls preload="metadata">
-        <source src="audio/product-ep05-contribs-stack.m4a" type="audio/mp4" />
-      </audio>
-    </div>
-    <div class="ep-topics">
-      <span class="ep-topic">contribs</span><span class="ep-topic">memory tool</span><span class="ep-topic">filesystem</span><span class="ep-topic">web tool</span><span class="ep-topic">Control Plane</span><span class="ep-topic">Benni Nexus</span>
-    </div>
+    <div class="ep-player"><audio controls preload="metadata"><source src="audio/product-ep05-contribs-stack.m4a" type="audio/mp4" /></audio></div>
+    <div class="ep-topics"><span class="ep-topic">contribs</span><span class="ep-topic">memory</span><span class="ep-topic">filesystem</span><span class="ep-topic">Control Plane</span><span class="ep-topic">Benni Nexus</span></div>
   </div>
-
 </div>
 
-<div class="doctrine">
-  <div class="quote-block">
-    <p>"The difference is not in the speed. It is in the architecture."</p>
-    <div class="author">— Benni-os · Operator Doctrine</div>
+<!-- BONUS -->
+<div class="bonus-section" id="bonus">
+  <div class="bonus-label">★ Bonus Resources</div>
+  <h2>More Than a <span class="accent">Playbook</span></h2>
+  <p>Four operator-grade bonuses included with your purchase. Not fluff. Each one is a direct extension of what you built in the chapters above.</p>
+
+  <div class="bonus-grid">
+
+    <div class="bonus-card">
+      <div class="bonus-icon">🗂️</div>
+      <div>
+        <h3>Production Starter Template</h3>
+        <p>A complete mcp-forge project scaffold with directory structure, pyproject.toml, Dockerfile, Railway config, ForgeTestClient setup, and CI/CD GitHub Actions workflow. Clone it and start building in 2 minutes instead of 2 hours.</p>
+        <span class="bonus-tag">Immediate Use</span>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">🗺️</div>
+      <div>
+        <h3>Benni-os Stack Diagram</h3>
+        <p>A high-resolution operator architecture diagram showing exactly how mcp-forge connects to JARVAS-2, Benni Control Plane, and Benni Nexus — with data flow annotations. Use it as your mental model reference and share it with your team.</p>
+        <span class="bonus-tag">Architecture Reference</span>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">✅</div>
+      <div>
+        <h3>Pre-Deploy Operator Checklist</h3>
+        <p>12-point checklist covering schema completeness, validation coverage, transport config, error response format, idempotency, test coverage, and deployment environment parity. Run it before every production deploy. Never ship a broken server again.</p>
+        <span class="bonus-tag">Ops Standard</span>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">🚀</div>
+      <div>
+        <h3>Early Access — Next Benni-os Product</h3>
+        <p>As an operator who purchased this playbook, you get early access and a discount on the next product in the Benni-os stack. The roadmap includes the JARVAS-2 Operator Guide and the Benni Control Plane Setup Playbook. You will be notified first.</p>
+        <span class="bonus-tag">Funnel Access</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- STACK CTA -->
+<div class="stack-cta">
+  <div class="section-label">You are inside the stack</div>
+  <h2>This is <span class="accent">Benni-os</span>.</h2>
+  <p>mcp-forge is one layer. JARVAS-2 runs the execution. Control Plane runs the orchestration. Nexus runs the gateway. The full operator stack is being built. You are already inside it.</p>
+  <div class="cta-row">
+    <a class="cta-btn" href="https://benni-os.net" target="_blank">benni-os.net →</a>
+    <a class="outline-btn" href="https://www.youtube.com/@Benni-OS1" target="_blank">🎥 YouTube Channel</a>
+    <a class="outline-btn" href="https://www.instagram.com/benni_os/" target="_blank">📸 Instagram</a>
   </div>
 </div>
 
 <footer>
   <div class="footer-links">
     <a href="https://benni-os.net" target="_blank">benni-os.net</a>
+    <a href="https://github.com/benni-os" target="_blank">GitHub</a>
     <a href="https://www.youtube.com/@Benni-OS1" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/benni_os/" target="_blank">Instagram</a>
     <a href="https://www.facebook.com/profile.php?id=61585892183984" target="_blank">Facebook</a>
